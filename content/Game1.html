@@ -82,6 +82,14 @@ $(document).ready(doSearch);
 <p></p>
 <p><button onclick="myFunction()">Try it</button></p>
 <p id="demo"></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;p&gt;&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;&lt;/p&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;// &lt;![CDATA[
+function myFunction() {
+  document.getElementById("demo").innerHTML = Math.floor(Math.random()*10);
+}
+// ]]&gt;&lt;/script&gt;</pre>
+<p><br/><br/></p>
 <script>// <![CDATA[
 function myFunction() {
   document.getElementById("demo").innerHTML = Math.floor(Math.random()*10);
