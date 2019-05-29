@@ -78,32 +78,54 @@ $(document).ready(doSearch);
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='課程相關資料.html'>課程相關資料</a><ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜式環境.html'>配置可攜式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='Moblie網站內容.html'>Moblie網站內容</a><ul><li><a href='架構CMSimfly.html'>架構CMSimfly</a></li></li></ul></ul><li><a href='Game.html'>Game</a><ul><li><a href='Game1.html'>Game1</a><li><a href='Game2.html'>Game2</a></li></ul><li><a href='期中影片.html'>期中影片</a><li><a href='ROC Flag(W14).html'>ROC Flag(W14)</a><li><a href='VM虛擬主機(W15).html'>VM虛擬主機(W15)</a></li></ul></nav><section><div id="tipue_search_content">ROC Flag(W14) << <a href='ROC Flag(W14).html'>Previous</a> <br /><h1>VM虛擬主機(W15)</h1>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='課程相關資料.html'>課程相關資料</a><ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜式環境.html'>配置可攜式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='Moblie網站內容.html'>Moblie網站內容</a><ul><li><a href='架構CMSimfly.html'>架構CMSimfly</a></li></li></ul></ul><li><a href='Game.html'>Game</a><ul><li><a href='Game1.html'>Game1</a><li><a href='Game2.html'>Game2</a></li></ul><li><a href='期中影片.html'>期中影片</a><li><a href='ROC Flag(W14).html'>ROC Flag(W14)</a><ul><li><a href='ROC.html'>ROC</a></li></ul><li><a href='VM虛擬主機(W15).html'>VM虛擬主機(W15)</a><li><a href='SSL-VPN(W15).html'>SSL-VPN(W15)</a><li><a href='校園軟體下載專區.html'>校園軟體下載專區</a><ul><li><a href='下載教學.html'>下載教學</a></li></ul></nav><section><div id="tipue_search_content">ROC << <a href='ROC.html'>Previous</a> <a href='SSL-VPN(W15).html'>Next</a> >> SSL-VPN(W15)<br /><h1>VM虛擬主機(W15)</h1>
 <p>W15</p>
 <p>1.到ubuntu網站下載Sever</p>
 <p>ubuntu網站:<a href="https://www.ubuntu.com/">https://www.ubuntu.com/</a></p>
-<img alt="" height="247" src="./../images/a.png" width="534"/>
+<p><img alt="" height="247" src="./../images/a.png" width="534"/></p>
 <p><img alt="" height="153" src="./../images/b.png" width="566"/></p>
 <p><span>2.打開VM--&gt;創建一台虛擬主機</span></p>
 <p><span><img alt="" height="306" src="./../images/c.png" width="544"/></span></p>
-<p><img alt="" height="464" src="./../images/d.png" width="514"/><img alt="" height="452" src="./../images/e.png" width="496"/></p>
-<p>3.設定完打開虛擬主機---&gt;載入檔案</p>
+<p>2.設定主機名稱及分配記憶體(不建議低於2048MB)</p>
+<p><img alt="" height="464" src="./../images/d.png" width="514"/></p>
+<p>3.Flie size通常都使用500GB,硬碟檔類型使用VMDK之後轉實體比較方便</p>
+<p>基本上我們的硬碟分配會使用動態分配(Dynamically allocated)用多少拿多少</p>
+<p>如果使用固定大小會很吃電腦的硬碟容量</p>
+<p><img alt="" height="452" src="./../images/e.png" width="496"/></p>
+<p>4.設定完打開虛擬主機---&gt;載入檔案</p>
 <p><img alt="" height="436" src="./../images/VirtualBox_D5dsuKgjbK.png" width="505"/></p>
-<p>4.按Start--&gt;設定</p>
+<p>5.按Start--&gt;設定</p>
+<p>選擇English語言</p>
 <p><img alt="" height="426" src="./../images/1.png" width="508"/></p>
+<p>這裡不用改直接Done</p>
 <p><img alt="" height="426" src="./../images/2.png" width="508"/></p>
+<p>這裡選第一個安裝,其他兩個是多主機雲端協同用的</p>
 <p><img alt="" height="428" src="./../images/3.png" width="510"/></p>
+<p>這裡是網路設定,現在是以NAT,就可以直接下一步了</p>
 <p><img alt="" height="428" src="./../images/4.png" width="509"/></p>
+<p>這裡是設定proxy,打上學校使用的proxy      <a href="http://140.130.17.4:3128">http://140.130.17.4:3128</a></p>
+<p>若不使用可留白</p>
 <p><img alt="" height="431" src="./../images/5.png" width="513"/></p>
+<p>這是ubuntu的鏡像網址,保留預設就好</p>
 <p><img alt="" height="431" src="./../images/6.png" width="512"/></p>
+<p>這裡是要分割硬碟,並格式化,這裡選第一個使用整顆硬碟來格式化</p>
 <p><img alt="" height="423" src="./../images/7-1.png" width="503"/></p>
-<p><img alt="" height="422" src="./../images/7-2.png" width="503"/></p>
+<p>這裡是要安裝的硬碟</p>
 <p><img alt="" height="422" src="./../images/7-3.1.png" width="502"/></p>
-<p><img alt="" height="420" src="./../images/7-3.png" width="500"/></p>
+<p>確認之後就可以開始格式化了</p>
+<p><img alt="" height="422" src="./../images/7-6.png" width="501"/></p>
 <p><img alt="" height="419" src="./../images/7-4.png" width="499"/></p>
+<p>再來要設定名稱和密碼</p>
+<p><img alt="" height="422" src="./../images/7-2.png" width="503"/></p>
+<p>這是問你要不要使用SSH key,打勾Install OpenSSH sever,就可以下一步了</p>
+<p><img alt="" height="420" src="./../images/7-3.png" width="500"/></p>
+<p>這裡直接下一步</p>
 <p><img alt="" height="421" src="./../images/7-5.png" width="500"/></p>
+<p>等待安裝完就完成了</p>
 <p><img alt="" height="420" src="./../images/11.png" width="499"/></p>
+<p>安裝完選擇Reboot Now就可以使用了</p>
 <p><img alt="" height="419" src="./../images/12.png" width="498"/></p>
-<p>5.做完這個設定就可以開始使用了</p>
-<p></p>
-<p></p><br />ROC Flag(W14) << <a href='ROC Flag(W14).html'>Previous</a> </div></section></div></body></html>
+<p>剛開始進入它會叫你輸入名稱和密碼,因為使用sudo都需要登入</p>
+<p>如果要關機要打指令<span style="color: #ff0000;">sudo halt<span style="color: #0000ff;">   這是關機並沒有關電源</span></span></p>
+<p><span color="#000000" style="color: #000000;">使用<span style="color: #ff0000;">sudo shutdown -h now   <span style="color: #0000ff;">關機並關電源</span></span></span></p>
+<br />ROC << <a href='ROC.html'>Previous</a> <a href='SSL-VPN(W15).html'>Next</a> >> SSL-VPN(W15)</div></section></div></body></html>
