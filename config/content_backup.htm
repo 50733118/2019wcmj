@@ -371,8 +371,22 @@ function draw2mid() {
 &lt;form id="f" name="f"&gt;Stage: &lt;input name="stage" type="text" value="First Throw"&gt; Point: &lt;input name="pv" type="text" value="   "&gt; Outcome: &lt;input name="outcome" type="text" value="     "&gt;&lt;/form&gt;</pre>
 <p><br/><br/></p>
 <h1>期中影片</h1>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/MppeZhV2zKI" width="560"></iframe></p>
-<h1>ROC Flag(W14)</h1>
+<p><br/><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/MppeZhV2zKI" width="560"></iframe></p>
+<h1>網路連線配置與設定</h1>
+<p>第一步:到任意網站(範例:Google Chrome)選取右上角管理--&gt;設定</p>
+<p><img alt="" height="298" src="/images/p1.png" width="434"/></p>
+<p><img alt="" height="486" src="/images/p2.png" width="397"/></p>
+<p>第二步:進階--&gt;系統-開啟Proxy設定</p>
+<p><img alt="" height="345" src="/images/p3.png" width="698"/></p>
+<p><img alt="" height="220" src="/images/p4.png" width="720"/></p>
+<p>第三步:連線--&gt;LAN設定</p>
+<p><img alt="" height="610" src="/images/p5.png" width="477"/></p>
+<p>第四步:把位址改學校IP:140.130.17.3</p>
+<p>學校連接<span>埠:3128</span></p>
+<p><img caption="false" height="386" src="/images/p6.png" width="443"/></p>
+<p>設定完成即可</p>
+<p></p><h1>w13</h1>
+<p><span style="color: #0000ff;">統整所有創建倉儲過程,並將w1~w12的上課資訊重新操作</span></p><h1>W14</h1>
 <p>注意事項:需更改自己倉儲內的flaskapp.py檔才能顯示國旗</p>
 <p>以下是需更改的程式碼:</p>
 <p><strong><span>def savePage() 的修改</span></strong></p>
@@ -2777,8 +2791,72 @@ def unique(items):
  
 if __name__ == "__main__":
     app.run()</pre>
+<p></p><h2>ROC Flag</h2>
+<!-- 導入 Brython 標準程式庫 -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
 <p></p>
-<h2>ROC</h2>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../data/py']});
+}
+</script>
+<p><canvas height="400" id="plotarea" width="600"></canvas></p>
+<script type="text/python">
+# 導入 doc
+from browser import document as doc
+import math
+
+# 準備繪圖畫布
+canvas = doc["plotarea"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script>
 <!-- 導入 Brython 標準程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -2855,12 +2933,79 @@ window.onload=function(){
 brython({debug:1, pythonpath:['./../data/py']});
 }
 </script>
-<p><canvas height="400" id="plotarea" width="600"></canvas></p>
+<p><canvas height="400" id="plotarea3" width="600"></canvas></p>
 <script type="text/python">
 # 導入 doc
 from browser import document as doc
 import math
 
+# 準備繪圖畫布
+canvas = doc["plotarea3"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(0, 0, 255)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script>
+<h3>程式碼</h3>
+<p><strong><span style="color: #ff0000;">國旗程式碼:</span></strong></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- 導入 Brython 標準程式庫 --&gt;
+&lt;script src="./../static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="./../static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- 啟動 Brython --&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../data/py']});
+}
+// ]]&gt;&lt;/script&gt;
+&lt;p&gt;&lt;canvas height="400" id="plotarea" width="600"&gt;&lt;/canvas&gt;&lt;/p&gt;
+&lt;script type="text/python"&gt;// &lt;![CDATA[
+# 導入 doc
+from browser import document as doc
+import math
+ 
 # 準備繪圖畫布
 canvas = doc["plotarea"]
 ctx = canvas.getContext("2d")
@@ -2908,8 +3053,9 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script><h1>VM虛擬主機(W15)</h1>
-<p>W15</p>
+// ]]&gt;&lt;/script&gt;</pre>
+<p></p><h1>W15</h1>
+<h2>VM虛擬主機</h2>
 <p>1.到ubuntu網站下載Sever</p>
 <p>ubuntu網站:<a href="https://www.ubuntu.com/">https://www.ubuntu.com/</a></p>
 <p><img alt="" height="247" src="/images/a.png" width="534"/></p>
@@ -2926,17 +3072,16 @@ ctx.fill()
 <p><img alt="" height="436" src="/images/VirtualBox_D5dsuKgjbK.png" width="505"/></p>
 <p>5.按Start--&gt;設定</p>
 <p>選擇English語言</p>
-<p><img alt="" height="426" src="/images/1.png" width="508"/></p>
+<p><img alt="" height="422" src="/images/vm1.png" width="503"/></p>
 <p>這裡不用改直接Done</p>
-<p><img alt="" height="426" src="/images/2.png" width="508"/></p>
+<p><img alt="" height="421" src="/images/vm2.png" width="501"/></p>
 <p>這裡選第一個安裝,其他兩個是多主機雲端協同用的</p>
-<p><img alt="" height="428" src="/images/3.png" width="510"/></p>
+<p><img alt="" height="419" src="/images/vm3.png" width="498"/></p>
 <p>這裡是網路設定,現在是以NAT,就可以直接下一步了</p>
-<p><img alt="" height="428" src="/images/4.png" width="509"/></p>
+<p><img alt="" height="423" src="/images/vm4.png" width="503"/></p>
 <p>這裡是設定proxy,打上學校使用的proxy      <a href="http://140.130.17.4:3128">http://140.130.17.4:3128</a></p>
 <p>若不使用可留白</p>
-<p><img alt="" height="431" src="/images/5.png" width="513"/></p>
-<p>這是ubuntu的鏡像網址,保留預設就好</p>
+<p><img alt="" height="424" src="/images/vm5.png" width="504"/>buntu的鏡像網址,保留預設就好</p>
 <p><img alt="" height="431" src="/images/6.png" width="512"/></p>
 <p>這裡是要分割硬碟,並格式化,這裡選第一個使用整顆硬碟來格式化</p>
 <p><img alt="" height="423" src="/images/7-1.png" width="503"/></p>
@@ -2957,13 +3102,12 @@ ctx.fill()
 <p><img alt="" height="419" src="/images/12.png" width="498"/></p>
 <p>剛開始進入它會叫你輸入名稱和密碼,因為使用sudo都需要登入</p>
 <p>如果要關機要打指令<span style="color: #ff0000;">sudo halt<span style="color: #0000ff;">   這是關機並沒有關電源</span></span></p>
-<p><span color="#000000" style="color: #000000;">使用<span style="color: #ff0000;">sudo shutdown -h now   <span style="color: #0000ff;">關機並關電源</span></span></span></p>
-<h1>SSL-VPN(W15)</h1>
+<p><span color="#000000" style="color: #000000;">使用<span style="color: #ff0000;">sudo shutdown -h now   <span style="color: #0000ff;">關機並關電源</span></span></span></p><h2>SSL-VPN</h2>
 <p>到學校電算中心有SSL-VPN服務教學</p>
 <p>參考網址:<a href="https://nfucc.nfu.edu.tw/zh/download/download-network/ssl-vpn">https://nfucc.nfu.edu.tw/zh/download/download-network/ssl-vpn</a></p>
-<p><span><strong>1. 首次使用須先安裝SSL VPN 程式(Juniper Networks Connect)</strong></span></p>
-<p><span>(1)請依您的作業系統版本下載使用者端程式：<a href="https://drive.narlabs.org.tw/navigate/s/8F663EC143514CF295FCB53B5B228956GUY">連結</a></span></p>
-<p><span>(2)程式下載完成後，點擊兩下開始安裝。</span><br/><span>   <img alt=" archive 3629 d5014af5" src="https://nfucc.nfu.edu.tw/images/image/-archive-3629_d5014af5.png"/></span></p>
+<p><span><strong>1. 首次使用須先安裝SSL VPN 程式</strong></span></p>
+<p><span>1.請依您的作業系統版本下載使用者端程式：<a href="https://drive.narlabs.org.tw/navigate/s/8F663EC143514CF295FCB53B5B228956GUY">連結</a></span></p>
+<p><span>2.程式下載完成後，點擊兩下開始安裝。</span><br/><span>   <img alt=" archive 3629 d5014af5" src="https://nfucc.nfu.edu.tw/images/image/-archive-3629_d5014af5.png"/></span></p>
 <p><span>   </span></p>
 <hr size="2" width="100%"/>
 <div><span><strong>2. </strong><strong>進行身份驗證(可由Juniper Network Connect或IE，請擇一進行身分認證)</strong></span></div>
@@ -3019,8 +3163,7 @@ ctx.fill()
 <blockquote>
 <div><span>如何得知連線的 IP 究竟是什麼呢？您可透過網際網路上提供 IP 位址偵測服務的網站進行確認，例如 <a href="http://showip.net/" target="_blank" title="Show IP"><span>http://showip.net/</span></a></span></div>
 <div><span><img alt="15313.png" src="https://nfucc.nfu.edu.tw/images/15313.png"/></span></div>
-</blockquote>
-<h1>校園軟體下載專區</h1>
+</blockquote><h2>校園軟體</h2>
 <p>學校提供免費的軟體,可以使用學校eCare帳號進行下載</p>
 <p><strong><span style="color: #ff0000;">以下可下載的軟體:</span></strong></p>
 <p><span style="color: #0000ff;"><strong>1.microsoft</strong></span></p>
@@ -3028,8 +3171,7 @@ ctx.fill()
 <p><span style="color: #0000ff;"><strong>3.<small>MATLAB Software</small></strong></span></p>
 <p><span style="color: #0000ff;"><strong>4.AUTODESK</strong></span></p>
 <p><span style="color: #0000ff;"><strong>5.<small>Free Software</small></strong></span></p>
-<p>相關資料源自電算中心網址:<a href="https://nfucc.nfu.edu.tw/zh/download">https://nfucc.nfu.edu.tw/zh/download</a></p>
-<h2>下載教學</h2>
+<p>相關資料源自電算中心網址:<a href="https://nfucc.nfu.edu.tw/zh/download">https://nfucc.nfu.edu.tw/zh/download</a></p><h3>下載教學</h3>
 <p>1.前往學校電算中心網站-下載專區</p>
 <p>網址:<a href="https://nfucc.nfu.edu.tw/zh/download">https://nfucc.nfu.edu.tw/zh/download</a></p>
 <p>點選校園授權軟體下載專區</p>
