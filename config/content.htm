@@ -6,7 +6,8 @@
 <p><strong>倉儲改版</strong></p>
 <p><strong>靜態 CMSimfly</strong></p>
 <p><strong>Mobile 網站內容</strong></p>
-<h1>課程相關資料</h1>
+<h1>我的Github倉儲</h1>
+<p>網址:<a href="https://github.com/50733118/2019wcmj">https://github.com/50733118/2019wcmj</a></p><h1>課程相關資料</h1>
 <p>本資料來源:<a href="http://cpgx.kmol.info/wcm2019/content/index.html">http://cpgx.kmol.info/wcm2019/content/index.html</a></p>
 <h2>網路連線設定</h2>
 <p><span>了解機械設計系電腦輔助設計室電腦的網路設定, 其中包括 IPv4 網路與 IPv6 網路設定.</span><br/><br/><span>正常情況下, 電腦輔助設計室中的 64 台電腦透過 IPv4 協定下的 DHCP 與 NAT 上網, 各電腦以 DHCP client 取得 192.168.1.* 的網路位址, 然後以 NAT 的一組外部 IP 上網, 通常必須設定 Proxy Server 為 http://proxy.kmol.info:3128 後上網會比較順暢, 但若 8 台 Proxy Servers 無法正常運作時, 則取消 Proxy Server 的設定.</span><br/><br/><span>瀏覽器代理主機設定</span><br/><br/><span>了解如何設定 Google Chrome 與 Firefox 瀏覽器的代理主機設定.</span><br/><br/><span>申請 Github 帳號</span><br/><br/><span>利用 Gmail 帳號申請 Github 帳號, 申請後利用電子郵箱收信進行確認後, 就可以在 Github 上建立倉儲.</span></p>
@@ -385,8 +386,7 @@ function draw2mid() {
 <p>學校連接<span>埠:3128</span></p>
 <p><img caption="false" height="386" src="/images/p6.png" width="443"/></p>
 <p>設定完成即可</p>
-<p></p><h1>w13</h1>
-<p><span style="color: #0000ff;">統整所有創建倉儲過程,並將w1~w12的上課資訊重新操作</span></p><h1>W14</h1>
+<p></p><h1>W14</h1>
 <p>注意事項:需更改自己倉儲內的flaskapp.py檔才能顯示國旗</p>
 <p>以下是需更改的程式碼:</p>
 <p><strong><span>def savePage() 的修改</span></strong></p>
@@ -2922,17 +2922,6 @@ ctx.closePath()
 ctx.fillStyle = '#fff'
 ctx.fill()
 </script>
-<!-- 導入 Brython 標準程式庫 -->
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-<p></p>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-// 設定 data/py 為共用程式路徑
-brython({debug:1, pythonpath:['./../data/py']});
-}
-</script>
 <p><canvas height="400" id="plotarea3" width="600"></canvas></p>
 <script type="text/python">
 # 導入 doc
@@ -2947,14 +2936,14 @@ ctx = canvas.getContext("2d")
 # 以下採用 canvas 原始座標繪圖
 flag_w = canvas.width
 flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
+circle_x = flag_w/2
+circle_y = flag_h/2
 # 先畫滿地紅
-ctx.fillStyle='rgb(0, 0, 255)'
-ctx.fillRect(0,0,flag_w,flag_h)
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(300,0,flag_w,flag_h)
 # 再畫青天
 ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
+ctx.fillRect(0,0,flag_w/2,flag_h)
 # 畫十二道光芒白日
 ctx.beginPath()
 star_radius = flag_w/8
@@ -2986,8 +2975,7 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script>
-<h3>程式碼</h3>
+</script><h3>程式碼</h3>
 <p><strong><span style="color: #ff0000;">國旗程式碼:</span></strong></p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- 導入 Brython 標準程式庫 --&gt;
 &lt;script src="./../static/brython.js"&gt;&lt;/script&gt;
@@ -3102,7 +3090,22 @@ ctx.fill()
 <p><img alt="" height="419" src="/images/12.png" width="498"/></p>
 <p>剛開始進入它會叫你輸入名稱和密碼,因為使用sudo都需要登入</p>
 <p>如果要關機要打指令<span style="color: #ff0000;">sudo halt<span style="color: #0000ff;">   這是關機並沒有關電源</span></span></p>
-<p><span color="#000000" style="color: #000000;">使用<span style="color: #ff0000;">sudo shutdown -h now   <span style="color: #0000ff;">關機並關電源</span></span></span></p><h2>SSL-VPN</h2>
+<p><span color="#000000" style="color: #000000;">使用<span style="color: #ff0000;">sudo shutdown -h now   <span style="color: #0000ff;">關機並關電源</span></span></span></p>
+<h3>nginx 安裝設定</h3>
+<p><span><strong>1.利用指令sudo apt install nginx 安裝 nginx WWW 伺服器</strong></span></p>
+<p><span><strong><span><img alt="" height="420" src="https://50733141.github.io/2019wcmj/images/%E4%BB%A5%E6%8C%87%E4%BB%A4%E5%AE%89%E8%A3%9Dnginx.png" width="500"/></span></strong></span></p>
+<p><strong><span>2. 利用<span>ifconfig</span>指令查詢 Ubuntu 伺服器的 IP,在網頁裡輸入網址，測試 nginx 伺服器是否可以連線</span></strong></p>
+<p><strong><span><img alt="" height="420" src="https://50733141.github.io/2019wcmj/images/ifconfig.png" width="500"/></span></strong></p>
+<p><strong><span><img alt="" height="361" src="https://50733141.github.io/2019wcmj/images/vituralbox%E9%96%8B%E5%95%9F%E7%B6%B2%E9%A0%81.png" width="600"/><br/></span></strong></p>
+<p><strong><span>3.<span> 開啟安裝好的filezilla client ，將編輯好的 nginx 設定檔案送到 Ubuntu</span></span></strong></p>
+<p><strong><span><span><img alt="" height="477" src="https://50733141.github.io/2019wcmj/images/%E5%82%B3%E9%80%81%E4%B8%89%E5%80%8B%E6%AA%94%E6%A1%88.png" width="600"/></span></span></strong></p>
+<h3>FileZilla</h3>
+<p><strong>FileZilla程式一種快速、可信賴的FTP用戶端以及伺服器端開放原始碼程式，具有多種特色、直覺的介面。</strong></p>
+<p><span style="color: #0000ff;"><strong>下載網頁:<a href="https://portableapps.com/apps/internet/filezilla_portable">https://portableapps.com/apps/internet/filezilla_portable</a></strong></span></p>
+<p>進入網頁後下載檔案並且進行安裝。</p>
+<p><img alt="" height="346" src="https://50733141.github.io/2019wcmj/images/chrome_Luo4Ub5nHB.png" width="600"/></p>
+<p>在檔案-站台管理員-新增站台-利用ifconfig查詢虛擬主機的ip位置後將ip新增到主機空格內，並且輸入虛擬主機使用者名稱及密碼，點選連線後即完成。</p>
+<p><img alt="" height="488" src="https://50733141.github.io/2019wcmj/images/filezilla_IYGkogLrBZ.png" width="600"/></p><h2>SSL-VPN</h2>
 <p>到學校電算中心有SSL-VPN服務教學</p>
 <p>參考網址:<a href="https://nfucc.nfu.edu.tw/zh/download/download-network/ssl-vpn">https://nfucc.nfu.edu.tw/zh/download/download-network/ssl-vpn</a></p>
 <p><span><strong>1. 首次使用須先安裝SSL VPN 程式</strong></span></p>
@@ -3184,3 +3187,10 @@ ctx.fill()
 <p><img alt="" height="253" src="/images/4.png" width="548"/></p>
 <p>5.選取下載版本即可完成</p>
 <p><img alt="" height="253" src="/images/5.png" width="547"/></p>
+<h1>期末報告</h1>
+<p>1.錄製至多5分鐘的期末報告影片,以學號的帳戶登入YouTube上傳,</p>
+<p>並改標題:</p>
+<p><span>國立虎尾科技大學 - 精密機械工程科 - 網際內容管理期末報告 - 學號 - 姓名</span></p>
+<p>2.由github倉儲更新歷程,呈現各週進度說明</p>
+<p>3.上台報告5分鐘</p>
+<p></p>

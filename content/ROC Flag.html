@@ -78,7 +78,7 @@ $(document).ready(doSearch);
 
 </ul>
 </confmenu></header>
-<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='課程相關資料.html'>課程相關資料</a><ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜式環境.html'>配置可攜式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='Moblie網站內容.html'>Moblie網站內容</a><ul><li><a href='架構CMSimfly.html'>架構CMSimfly</a></li></li></ul></ul><li><a href='Game.html'>Game</a><ul><li><a href='Game1.html'>Game1</a><li><a href='Game2.html'>Game2</a></li></ul><li><a href='期中影片.html'>期中影片</a><li><a href='網路連線配置與設定.html'>網路連線配置與設定</a><li><a href='w13.html'>w13</a><li><a href='W14.html'>W14</a><ul><li><a href='ROC Flag.html'>ROC Flag</a><ul><li><a href='程式碼.html'>程式碼</a></li></li></ul></ul><li><a href='W15.html'>W15</a><ul><li><a href='VM虛擬主機.html'>VM虛擬主機</a><li><a href='SSL-VPN.html'>SSL-VPN</a><li><a href='校園軟體.html'>校園軟體</a><ul><li><a href='下載教學.html'>下載教學</a></li></ul></nav><section><div id="tipue_search_content">W14 << <a href='W14.html'>Previous</a> <a href='程式碼.html'>Next</a> >> 程式碼<br /><h1>ROC Flag</h1>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><div class="tipue_search_group"><input style="width: 6vw;" type="text" name="q" id="tipue_search_input" pattern=".{2,}" title="Press enter key to search" required></div><li><a href='簡介.html'>簡介</a><li><a href='我的Github倉儲.html'>我的Github倉儲</a><li><a href='課程相關資料.html'>課程相關資料</a><ul><li><a href='網路連線設定.html'>網路連線設定</a><li><a href='配置可攜式環境.html'>配置可攜式環境</a><li><a href='倉儲改版.html'>倉儲改版</a><li><a href='Moblie網站內容.html'>Moblie網站內容</a><ul><li><a href='架構CMSimfly.html'>架構CMSimfly</a></li></li></ul></ul><li><a href='Game.html'>Game</a><ul><li><a href='Game1.html'>Game1</a><li><a href='Game2.html'>Game2</a></li></ul><li><a href='期中影片.html'>期中影片</a><li><a href='網路連線配置與設定.html'>網路連線配置與設定</a><li><a href='W14.html'>W14</a><ul><li><a href='ROC Flag.html'>ROC Flag</a><ul><li><a href='程式碼.html'>程式碼</a></li></li></ul></ul><li><a href='W15.html'>W15</a><ul><li><a href='VM虛擬主機.html'>VM虛擬主機</a><ul><li><a href='nginx 安裝設定.html'>nginx 安裝設定</a><li><a href='FileZilla.html'>FileZilla</a></li></ul><li><a href='SSL-VPN.html'>SSL-VPN</a><li><a href='校園軟體.html'>校園軟體</a><ul><li><a href='下載教學.html'>下載教學</a></li></li></ul></ul><li><a href='期末報告.html'>期末報告</a></li></ul></nav><section><div id="tipue_search_content">W14 << <a href='W14.html'>Previous</a> <a href='程式碼.html'>Next</a> >> 程式碼<br /><h1>ROC Flag</h1>
 <!-- 導入 Brython 標準程式庫 -->
 <script src="./../static/brython.js"></script>
 <script src="./../static/brython_stdlib.js"></script>
@@ -209,17 +209,6 @@ ctx.closePath()
 ctx.fillStyle = '#fff'
 ctx.fill()
 </script>
-<!-- 導入 Brython 標準程式庫 -->
-<script src="./../static/brython.js"></script>
-<script src="./../static/brython_stdlib.js"></script>
-<p></p>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-// 設定 data/py 為共用程式路徑
-brython({debug:1, pythonpath:['./../data/py']});
-}
-</script>
 <p><canvas height="400" id="plotarea3" width="600"></canvas></p>
 <script type="text/python">
 # 導入 doc
@@ -234,14 +223,14 @@ ctx = canvas.getContext("2d")
 # 以下採用 canvas 原始座標繪圖
 flag_w = canvas.width
 flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
+circle_x = flag_w/2
+circle_y = flag_h/2
 # 先畫滿地紅
-ctx.fillStyle='rgb(0, 0, 255)'
-ctx.fillRect(0,0,flag_w,flag_h)
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(300,0,flag_w,flag_h)
 # 再畫青天
 ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
+ctx.fillRect(0,0,flag_w/2,flag_h)
 # 畫十二道光芒白日
 ctx.beginPath()
 star_radius = flag_w/8
@@ -273,5 +262,4 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script>
-<br />W14 << <a href='W14.html'>Previous</a> <a href='程式碼.html'>Next</a> >> 程式碼</div></section></div></body></html>
+</script><br />W14 << <a href='W14.html'>Previous</a> <a href='程式碼.html'>Next</a> >> 程式碼</div></section></div></body></html>
